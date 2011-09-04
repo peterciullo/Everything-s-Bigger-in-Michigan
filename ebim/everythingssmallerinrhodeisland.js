@@ -24,7 +24,8 @@ function init() {
 		switchToPage(1);
 		changeNowPlaying(vid_array.length-1);
 		populatePages();
-		$('#page-1').addClass('current-page');				
+		$('#page-1').addClass('current-page');
+		$('#scriptless').remove();		
 	}); 
 }
 
@@ -37,15 +38,16 @@ function addVidButton(index) {
 	result = '<li id="video-';
 	result += index;
 	result += '" class="playlist-item">'
-	result += '<a href="javascript:switchToVideo(';
+	result += '<a onclick="javascript:switchToVideo(';
 	result += index;
-	result += ')" class="playlist-link" >';
+	result += ')" class="playlist-link" >';	
 	result += '<img src="http://img.youtube.com/vi/';
 	result += vid_array[index];
 	result += '/0.jpg" /><span class="vid-button">#';
 	result += index;
 	result+='</span></a></li>';
-	$('#playlist').append(result);	
+	$('#playlist').append(result);
+
 } 
 
 /*
@@ -149,7 +151,7 @@ function populatePages() {
 	if(num_pages <= 9) {
 		var i = 1;
 		for (i = 1; i<=num_pages; i++) {
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + i +')">' + i + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + i +')">' + i + '</a></li>');
 		}
 	}
 	else {
@@ -157,36 +159,36 @@ function populatePages() {
 		if (current_page < 4) {
 			var i = 1;
 			for (i = 1; i<=4; i++) {
-				$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + i +')" id="page-' + i + '">' + i + '</a></li>');
+				$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + i +')" id="page-' + i + '">' + i + '</a></li>');
 			}
 			$('#playlist-pages').append('<li>...</li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages - 1) +')" id="page-' + (num_pages - 1) + '">' + (num_pages-1) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + num_pages +')" id="page-' + num_pages + '">' + num_pages + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages - 1) +')" id="page-' + (num_pages - 1) + '">' + (num_pages-1) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + num_pages +')" id="page-' + num_pages + '">' + num_pages + '</a></li>');
 		}
 		else if (num_pages - current_page < 4) {
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + 1 +')" id="page-' + 1 + '">' + 1 + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + 2 +')" id="page-' + 2 + '">' + 2 + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + 3 +')" id="page-' + 3 + '">' + 3 + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + 1 +')" id="page-' + 1 + '">' + 1 + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + 2 +')" id="page-' + 2 + '">' + 2 + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + 3 +')" id="page-' + 3 + '">' + 3 + '</a></li>');
 			$('#playlist-pages').append('<li>...</li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-4) +')" id="page-' + (num_pages-4) + '">' + (num_pages-4) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-3) +')" id="page-' + (num_pages-3) + '">' + (num_pages-3) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-2) +')" id="page-' + (num_pages-2) + '">' + (num_pages-2) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-1) +')" id="page-' + (num_pages-1) + '">' + (num_pages-1) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages) +')" id="page-' + (num_pages) + '">' + (num_pages) + '</a></li>');						
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-4) +')" id="page-' + (num_pages-4) + '">' + (num_pages-4) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-3) +')" id="page-' + (num_pages-3) + '">' + (num_pages-3) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-2) +')" id="page-' + (num_pages-2) + '">' + (num_pages-2) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-1) +')" id="page-' + (num_pages-1) + '">' + (num_pages-1) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages) +')" id="page-' + (num_pages) + '">' + (num_pages) + '</a></li>');						
 		}
 		else {
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + 1 +')" id="page-' + 1 + '">' + 1 + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + 2 +')" id="page-' + 2 + '">' + 2 + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + 1 +')" id="page-' + 1 + '">' + 1 + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + 2 +')" id="page-' + 2 + '">' + 2 + '</a></li>');
 			$('#playlist-pages').append('<li>...</li>');
 		
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (current_page-1) +')" id="page-' + (current_page-1) + '">' + (current_page-1) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (current_page) +')" id="page-' + (current_page) + '">' + (current_page) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (current_page+1) +')" id="page-' + (current_page+1) + '">' + (current_page+1) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (current_page-1) +')" id="page-' + (current_page-1) + '">' + (current_page-1) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (current_page) +')" id="page-' + (current_page) + '">' + (current_page) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (current_page+1) +')" id="page-' + (current_page+1) + '">' + (current_page+1) + '</a></li>');
 			
 			$('#playlist-pages').append('<li>...</li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-2) +')" id="page-' + (num_pages-2) + '">' + (num_pages-2) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + (num_pages-1) +')" id="page-' + (num_pages-1) + '">' + (num_pages-1) + '</a></li>');
-			$('#playlist-pages').append('<li><a href="javascript:switchToPage(' + num_pages +')" id="page-' + num_pages + '">' + num_pages + '</a></li>');		
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-2) +')" id="page-' + (num_pages-2) + '">' + (num_pages-2) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + (num_pages-1) +')" id="page-' + (num_pages-1) + '">' + (num_pages-1) + '</a></li>');
+			$('#playlist-pages').append('<li><a onclick="javascript:switchToPage(' + num_pages +')" id="page-' + num_pages + '">' + num_pages + '</a></li>');		
 		}
 	}
 

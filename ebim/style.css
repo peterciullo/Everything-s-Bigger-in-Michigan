@@ -255,3 +255,6 @@ ul#playlist-pages
 	color:#fff;
 }
 
+a {
+	cursor:pointer !important;
+}
