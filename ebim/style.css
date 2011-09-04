@@ -1,0 +1,257 @@
+#mid-sidebar
+{
+	width:800px;
+	height:850px;
+	position:relative;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:0;
+	box-shadow:0 0 12px #000;
+	text-align:center;
+	z-index:4;
+	background-color:#000;
+}
+
+#playlist-area
+{
+	height:260px;
+	margin-left:auto;
+	margin-right:auto;
+	position:absolute;
+	top:540px;
+	left:78px;
+	width:680px;
+}
+
+#playlist img
+{
+	box-shadow:0 0 2px #000;
+	width:125px;
+	height:100px;
+	float:none;
+}
+
+#playlist
+{
+	display:block;
+	float:none;
+}
+
+#now-playing
+{
+	position:absolute;
+	top:8px;
+	left:8px;
+	background:#fff;
+	border:solid 1px #696969;
+	border-bottom-right-radius:8px;
+	color:#000;
+	text-decoration:none;
+	font-weight:700;
+	font-family:impact helvetica verdana sans;
+	font-size:0.75em;
+	padding:4px;
+}
+
+.vid-button
+{
+	text-decoration:none;
+	font-weight:700;
+	font-family:impact helvetica verdana sans;
+	color:#fff;
+	position:absolute;
+	bottom:8px;
+	right:8px;
+	text-align:right;
+	border-top-left-radius:12px;
+	background:#000;
+	padding:4px;
+}
+
+#random-button
+{
+	position:relative;
+	top:20px;
+	border:solid 1px #bb6;
+	border-radius:8px;
+	text-decoration:none;
+	font-weight:700;
+	font-family:impact helvetica verdana sans;
+	color:#333;
+	background:#efcf00;
+	padding:6px;
+}
+
+#random-button:hover,#playlist-pages li a:hover
+{
+	background:#ff7;
+}
+
+.playlist-link:hover span.vid-button
+{
+	text-decoration:none;
+	background:#000;
+}
+
+li a
+{
+	text-decoration:none;
+}
+
+#main-video
+{
+	position:relative;
+}
+
+#main-video o
+{
+	position:absolute;
+	7left:80px;
+}
+
+#playlist li
+{
+	float:left;
+	position:relative;
+	padding:8px;
+}
+
+li.playlist-item:hover
+{
+	opacity:0.8;
+}
+
+a img
+{
+	border:none;
+}
+
+div#main-container
+{
+	min-height:100px;
+}
+
+body
+{
+	background-color:#404040;
+	background-image:url(bg.png);
+	background-attachment:fixed;
+	color:#fff;
+	background-repeat:no-repeat;
+	background-position:center top;
+}
+
+#top-bar
+{
+	height:0;
+	margin:0;
+	padding:0;
+}
+
+#main-vid-id
+{
+	font-family:helvetica, sans;
+	font-size:1.5em;
+	font-weight:700;
+	text-shadow:0.1em 0.1em #333;
+	position:relative;
+}
+
+a#left-arrow
+{
+	height:344px;
+	width:97px;
+	background-image:url(arrow-left.png);
+	background-color:#000;
+	background-repeat:no-repeat;
+	background-position:center center;
+	position:absolute;
+	top:153px;
+	left:91px;
+	opacity:0.7;
+	z-index:10;
+}
+
+#main-video a:hover
+{
+	opacity:1.0;
+}
+
+#right-arrow
+{
+	height:344px;
+	width:97px;
+	background-image:url(arrow-right.png);
+	background-repeat:no-repeat;
+	background-position:center center;
+	position:absolute;
+	top:153px;
+	left:612px;
+	opacity:0.7;
+}
+
+
+#main-video object
+{
+	position:relative;
+	top:0;
+	left:0;
+}
+
+*
+{
+	list-style:none !important;
+}
+
+ul#playlist-pages
+{
+	margin-top:-24px;
+	z-index:15;
+	position:relative;
+	top:300px;
+	left:-30px;
+}
+
+#playlist-pages li
+{
+	display:inline;
+}
+
+#playlist-pages li a
+{
+	cursor:pointer;
+	background:#efcf00;
+	border:solid 1px #bb6;
+	border-radius:8px;
+	text-decoration:none;
+	font-weight:700;
+	font-family:impact helvetica verdana sans;
+	color:#333;
+	margin-left:4px;
+	z-index:20;
+	padding:4px;
+}
+
+#playlist-pages li a.current-page
+{
+	background:#fff;
+	border:solid 1px #696969;
+}
+
+#playlist-pages-label
+{
+	background:none;
+}
+
+#credit
+{
+	text-align:center;
+	width:100%;
+	color:#ccc;
+}
+
+#credit a
+{
+	color:#fff;
+}
+
